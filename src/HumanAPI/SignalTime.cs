@@ -114,6 +114,7 @@ namespace HumanAPI
 			{
 				timerRunning = true;
 			}
+			prevInput = 0f;
 		}
 	}
 }

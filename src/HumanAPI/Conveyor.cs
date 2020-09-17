@@ -103,12 +103,6 @@ namespace HumanAPI
 		[Tooltip("The object the conveyor will be using")]
 		public GameObject itemPrefab;
 
-		[Tooltip("(Normally we use the mesh of the prefab for collision. Tick this to enable an override collider)")]
-		public bool useOverrideCollider;
-
-		[Tooltip("Override for collision (Tick above box to enable)")]
-		public GameObject colliderPrefab;
-
 		[Tooltip("The number of segments within the conveyors total run")]
 		public int segmentCount = 10;
 
@@ -139,30 +133,6 @@ namespace HumanAPI
 		[Tooltip("Can the player grab the end of the conveyor?")]
 		public bool endGrabbable = true;
 
-		private Mesh linearLong;
-
-		private Mesh linearShort;
-
-		private Mesh radialShort;
-
-		private Mesh radialLong;
-
-		private GameObject linearCollidersTop;
-
-		private GameObject linearCollidersBottom;
-
-		private GameObject radialCollidersStart;
-
-		private GameObject radialCollidersEnd;
-
-		private GameObject[] collidersTop;
-
-		private GameObject[] collidersBottom;
-
-		private GameObject[] collidersStart;
-
-		private GameObject[] collidersEnd;
-
 		private bool visible;
 
 		public Rigidbody topTrack;
@@ -187,6 +157,14 @@ namespace HumanAPI
 
 		private float currentOffset;
 
+		private Mesh linearLong;
+
+		private Mesh linearShort;
+
+		private Mesh radialShort;
+
+		private Mesh radialLong;
+
 		private NetFloat encoder;
 
 		protected override void OnEnable()
@@ -201,10 +179,6 @@ namespace HumanAPI
 			encoder = new NetFloat(segmentSpacing, 8, 3, 5);
 			InitializeArrays();
 			itemPrefab.SetActive(value: false);
-			if (colliderPrefab != null)
-			{
-				colliderPrefab.SetActive(value: false);
-			}
 		}
 
 		public void OnBecameVisible()
@@ -258,10 +232,7 @@ namespace HumanAPI
 			radialLong = CreateMeshArray(sharedMesh, num2 + 1, Matrix4x4.TRS(up * radius, Quaternion.identity, Vector3.one), Matrix4x4.TRS(Vector3.zero, Quaternion.AngleAxis(segmentSpacing / radialLength * 180f, right), Vector3.one));
 			topTrack.transform.localPosition = Vector3.zero;
 			topTrack.transform.localRotation = Quaternion.identity;
-			if (!useOverrideCollider)
-			{
-				topTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = linearLong;
-			}
+			topTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = linearLong;
 			topTrack.gameObject.AddComponent<MeshFilter>().sharedMesh = linearLong;
 			topTrack.gameObject.AddComponent<MeshRenderer>().sharedMaterial = sharedMaterial;
 			topTrack.gameObject.GetComponent<MeshRenderer>().probeAnchor = base.transform;
@@ -272,10 +243,7 @@ namespace HumanAPI
 			}
 			endTrack.transform.localPosition = forward * length;
 			endTrack.transform.localRotation = Quaternion.AngleAxis(frac / radialLength * 180f, right);
-			if (!useOverrideCollider)
-			{
-				endTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = radialShort;
-			}
+			endTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = radialShort;
 			endTrack.gameObject.AddComponent<MeshFilter>().sharedMesh = radialShort;
 			endTrack.gameObject.AddComponent<MeshRenderer>().sharedMaterial = sharedMaterial;
 			endTrack.gameObject.GetComponent<MeshRenderer>().probeAnchor = base.transform;
@@ -286,10 +254,7 @@ namespace HumanAPI
 			}
 			bottomTrack.transform.localPosition = forward * length;
 			bottomTrack.transform.localRotation = Quaternion.AngleAxis(180f, right);
-			if (!useOverrideCollider)
-			{
-				bottomTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = linearLong;
-			}
+			bottomTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = linearLong;
 			bottomTrack.gameObject.AddComponent<MeshFilter>().sharedMesh = linearLong;
 			bottomTrack.gameObject.AddComponent<MeshRenderer>().sharedMaterial = sharedMaterial;
 			bottomTrack.gameObject.GetComponent<MeshRenderer>().probeAnchor = base.transform;
@@ -300,10 +265,7 @@ namespace HumanAPI
 			}
 			startTrack.transform.localPosition = Vector3.zero;
 			startTrack.transform.localRotation = Quaternion.AngleAxis(frac / radialLength * 180f + 180f, right);
-			if (!useOverrideCollider)
-			{
-				startTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = radialShort;
-			}
+			startTrack.gameObject.AddComponent<MeshCollider>().sharedMesh = radialShort;
 			startTrack.gameObject.AddComponent<MeshFilter>().sharedMesh = radialShort;
 			startTrack.gameObject.AddComponent<MeshRenderer>().sharedMaterial = sharedMaterial;
 			startTrack.gameObject.GetComponent<MeshRenderer>().probeAnchor = base.transform;
@@ -316,37 +278,6 @@ namespace HumanAPI
 			bottomPart = new LinearPart(this, bottomTrack, 0f - segmentSpacing / 2f, length + segmentSpacing / 2f);
 			endPart = new RadialPart(this, endTrack, 0f - segmentSpacing / 2f, radialLength + segmentSpacing / 2f);
 			startPart = new RadialPart(this, startTrack, 0f - segmentSpacing / 2f, radialLength + segmentSpacing / 2f);
-			if (useOverrideCollider)
-			{
-				(linearCollidersTop = new GameObject()).transform.parent = topTrack.transform;
-				linearCollidersTop.name = "Top";
-				(linearCollidersBottom = new GameObject()).transform.parent = bottomTrack.transform;
-				linearCollidersBottom.name = "Bottom";
-				(radialCollidersStart = new GameObject()).transform.parent = startTrack.transform;
-				radialCollidersStart.name = "Front";
-				(radialCollidersEnd = new GameObject()).transform.parent = endTrack.transform;
-				radialCollidersEnd.name = "Back";
-				Transform transform = linearCollidersTop.transform;
-				Vector3 zero = Vector3.zero;
-				radialCollidersEnd.transform.localPosition = zero;
-				zero = zero;
-				radialCollidersStart.transform.localPosition = zero;
-				zero = zero;
-				linearCollidersBottom.transform.localPosition = zero;
-				transform.localPosition = zero;
-				Transform transform2 = linearCollidersTop.transform;
-				Quaternion identity = Quaternion.identity;
-				radialCollidersEnd.transform.localRotation = identity;
-				identity = identity;
-				radialCollidersStart.transform.localRotation = identity;
-				identity = identity;
-				linearCollidersBottom.transform.localRotation = identity;
-				transform2.localRotation = identity;
-				collidersTop = CreateColliderArray(colliderPrefab, linearCollidersTop.transform, num, up * radius, forward * segmentSpacing, 0f);
-				collidersBottom = CreateColliderArray(colliderPrefab, linearCollidersBottom.transform, num, up * radius, forward * segmentSpacing, 0f);
-				collidersStart = CreateColliderArray(colliderPrefab, radialCollidersStart.transform, num2 + 1, up * radius, Vector3.zero, segmentSpacing / radialLength * 180f);
-				collidersEnd = CreateColliderArray(colliderPrefab, radialCollidersEnd.transform, num2 + 1, up * radius, Vector3.zero, segmentSpacing / radialLength * 180f);
-			}
 		}
 
 		private Rigidbody CreateBody(string name)
@@ -356,8 +287,6 @@ namespace HumanAPI
 			Rigidbody rigidbody = gameObject.AddComponent<Rigidbody>();
 			rigidbody.mass = 1000f;
 			rigidbody.isKinematic = true;
-			rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-			rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 			return rigidbody;
 		}
 
@@ -420,7 +349,6 @@ namespace HumanAPI
 
 		private void Wrap(float delta)
 		{
-			bool flag = false;
 			currentOffset += delta;
 			if (linearIsLong)
 			{
@@ -428,11 +356,8 @@ namespace HumanAPI
 				{
 					float num = delta - currentOffset;
 					float post = 0f - segmentSpacing - num;
-					if (!useOverrideCollider)
-					{
-						WrapParts(topPart, startPart, num, post, lowBound: true);
-						WrapParts(bottomPart, endPart, num, post, lowBound: true);
-					}
+					WrapParts(topPart, startPart, num, post, lowBound: true);
+					WrapParts(bottomPart, endPart, num, post, lowBound: true);
 					currentOffset += segmentSpacing;
 					topTrack.position += axisForward * segmentSpacing;
 					bottomTrack.position -= axisForward * segmentSpacing;
@@ -445,11 +370,8 @@ namespace HumanAPI
 					}
 					float num2 = delta - (currentOffset - (segmentSpacing - frac));
 					float post2 = segmentSpacing - num2;
-					if (!useOverrideCollider)
-					{
-						WrapParts(startPart, topPart, num2, post2, lowBound: false);
-						WrapParts(endPart, bottomPart, num2, post2, lowBound: false);
-					}
+					WrapParts(startPart, topPart, num2, post2, lowBound: false);
+					WrapParts(endPart, bottomPart, num2, post2, lowBound: false);
 					startTrack.rotation = Quaternion.AngleAxis((0f - segmentSpacing) / radialLength * 180f, axis) * startTrack.rotation;
 					endTrack.rotation = Quaternion.AngleAxis((0f - segmentSpacing) / radialLength * 180f, axis) * endTrack.rotation;
 				}
@@ -461,11 +383,8 @@ namespace HumanAPI
 				{
 					float num3 = delta - (currentOffset - segmentSpacing);
 					float post3 = segmentSpacing - num3;
-					if (!useOverrideCollider)
-					{
-						WrapParts(topPart, endPart, num3, post3, lowBound: false);
-						WrapParts(bottomPart, startPart, num3, post3, lowBound: false);
-					}
+					WrapParts(topPart, endPart, num3, post3, lowBound: false);
+					WrapParts(bottomPart, startPart, num3, post3, lowBound: false);
 					currentOffset -= segmentSpacing;
 					topTrack.position -= axisForward * segmentSpacing;
 					bottomTrack.position += axisForward * segmentSpacing;
@@ -478,58 +397,29 @@ namespace HumanAPI
 					}
 					float num4 = delta - (currentOffset - (segmentSpacing - frac));
 					float post4 = 0f - segmentSpacing - num4;
-					if (!useOverrideCollider)
-					{
-						WrapParts(startPart, bottomPart, num4, post4, lowBound: true);
-						WrapParts(endPart, topPart, num4, post4, lowBound: true);
-					}
+					WrapParts(startPart, bottomPart, num4, post4, lowBound: true);
+					WrapParts(endPart, topPart, num4, post4, lowBound: true);
 					startTrack.rotation = Quaternion.AngleAxis(segmentSpacing / radialLength * 180f, axis) * startTrack.rotation;
 					endTrack.rotation = Quaternion.AngleAxis(segmentSpacing / radialLength * 180f, axis) * endTrack.rotation;
 				}
 				linearIsLong = true;
-				flag = true;
 			}
-			if (useOverrideCollider)
-			{
-				if (flag)
-				{
-					WrapColliders(-axisForward, endTrack, collidersEnd, bottomTrack, collidersBottom[0]);
-					WrapColliders(axisForward, startTrack, collidersStart, topTrack, collidersTop[0]);
-					WrapColliders(-axisForward, bottomTrack, collidersBottom, startTrack, collidersStart[0]);
-					WrapColliders(axisForward, topTrack, collidersTop, endTrack, collidersEnd[0]);
-				}
-				MeshFilter component = topTrack.gameObject.GetComponent<MeshFilter>();
-				Mesh sharedMesh = (!linearIsLong) ? linearShort : linearLong;
-				bottomTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				component.sharedMesh = sharedMesh;
-				MeshFilter component2 = startTrack.gameObject.GetComponent<MeshFilter>();
-				sharedMesh = ((!linearIsLong) ? radialLong : radialShort);
-				endTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				component2.sharedMesh = sharedMesh;
-				collidersTop[collidersTop.Length - 1].SetActive(linearIsLong);
-				collidersBottom[collidersBottom.Length - 1].SetActive(linearIsLong);
-				collidersStart[collidersStart.Length - 1].SetActive(!linearIsLong);
-				collidersEnd[collidersEnd.Length - 1].SetActive(!linearIsLong);
-			}
-			else
-			{
-				MeshCollider component3 = topTrack.gameObject.GetComponent<MeshCollider>();
-				Mesh sharedMesh = (!linearIsLong) ? linearShort : linearLong;
-				bottomTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				sharedMesh = sharedMesh;
-				bottomTrack.gameObject.GetComponent<MeshCollider>().sharedMesh = sharedMesh;
-				sharedMesh = sharedMesh;
-				topTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				component3.sharedMesh = sharedMesh;
-				MeshCollider component4 = startTrack.gameObject.GetComponent<MeshCollider>();
-				sharedMesh = ((!linearIsLong) ? radialLong : radialShort);
-				endTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				sharedMesh = sharedMesh;
-				endTrack.gameObject.GetComponent<MeshCollider>().sharedMesh = sharedMesh;
-				sharedMesh = sharedMesh;
-				startTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = sharedMesh;
-				component4.sharedMesh = sharedMesh;
-			}
+			MeshCollider component = topTrack.gameObject.GetComponent<MeshCollider>();
+			Mesh mesh = (!linearIsLong) ? linearShort : linearLong;
+			bottomTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+			mesh = mesh;
+			bottomTrack.gameObject.GetComponent<MeshCollider>().sharedMesh = mesh;
+			mesh = mesh;
+			topTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+			component.sharedMesh = mesh;
+			MeshCollider component2 = startTrack.gameObject.GetComponent<MeshCollider>();
+			mesh = ((!linearIsLong) ? radialLong : radialShort);
+			endTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+			mesh = mesh;
+			endTrack.gameObject.GetComponent<MeshCollider>().sharedMesh = mesh;
+			mesh = mesh;
+			startTrack.gameObject.GetComponent<MeshFilter>().sharedMesh = mesh;
+			component2.sharedMesh = mesh;
 		}
 
 		private void WrapParts(Part current, Part next, float pre, float post, bool lowBound)
@@ -563,49 +453,6 @@ namespace HumanAPI
 				}
 			}
 		}
-
-		private void WrapColliders(Vector3 forward, Rigidbody body, GameObject[] objects, Rigidbody nextBody, GameObject nextObject)
-		{
-			for (int i = 0; i < Human.all.Count; i++)
-			{
-				Human human = Human.all[i];
-				WrapColliders(human.ragdoll.partLeftHand.sensor, forward, body, objects, nextBody, nextObject);
-				WrapColliders(human.ragdoll.partRightHand.sensor, forward, body, objects, nextBody, nextObject);
-			}
-		}
-
-		private void WrapColliders(CollisionSensor sensor, Vector3 forward, Rigidbody body, GameObject[] objects, Rigidbody nextBody, GameObject nextObject)
-		{
-			ConfigurableJoint grabJoint = sensor.grabJoint;
-			Vector3 zero = Vector3.zero;
-			if (grabJoint != null)
-			{
-				zero = grabJoint.connectedAnchor;
-			}
-			int num = 0;
-			while (true)
-			{
-				if (num < objects.Length)
-				{
-					if (sensor.grabObject == objects[num])
-					{
-						break;
-					}
-					num++;
-					continue;
-				}
-				return;
-			}
-			if (num < objects.Length - 2)
-			{
-				sensor.ReleaseGrab();
-			}
-			else
-			{
-				sensor.ReleaseGrab();
-			}
-		}
-
 		private Mesh CreateMeshArray(Mesh source, int count, Matrix4x4 initial, Matrix4x4 delta)
 		{
 			Vector3[] vertices = source.vertices;
@@ -642,21 +489,6 @@ namespace HumanAPI
 			mesh.triangles = array4;
 			mesh.RecalculateBounds();
 			return mesh;
-		}
-
-		private GameObject[] CreateColliderArray(GameObject source, Transform parent, int count, Vector3 initialPos, Vector3 deltaPos, float deltaRot)
-		{
-			GameObject[] array = new GameObject[count];
-			for (int i = 0; i < count; i++)
-			{
-				GameObject gameObject = UnityEngine.Object.Instantiate(source, parent);
-				gameObject.transform.localPosition = initialPos + deltaPos * i;
-				gameObject.transform.localRotation = Quaternion.identity;
-				gameObject.transform.RotateAround(parent.position, right, deltaRot * (float)i);
-				gameObject.name = parent.gameObject.name + " " + i;
-				array[i] = gameObject;
-			}
-			return array;
 		}
 
 		public void StartNetwork(NetIdentity identity)

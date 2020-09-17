@@ -205,6 +205,11 @@ public static class SwitchAssetBundle
 		mSceneBundle = "factoryscene"
 	};
 
+	private static StandardBundle sGolfScene = new StandardBundle
+	{
+		mSceneBundle = "golfscene"
+	};
+
 	private static Dictionary<string, StandardBundle> sStandardBundles = new Dictionary<string, StandardBundle>
 	{
 		{
@@ -214,6 +219,10 @@ public static class SwitchAssetBundle
 		{
 			"Factory",
 			sFactoryScene
+		},
+		{
+			"Golf",
+			sGolfScene
 		}
 	};
 

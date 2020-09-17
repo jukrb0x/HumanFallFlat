@@ -60,7 +60,7 @@ namespace Multiplayer
 
 		private void Awake()
 		{
-			lobbySelectMenuOptions = Object.FindObjectOfType<LobbySelectMenuOptions>();
+			lobbySelectMenuOptions = FindObjectOfType<ButtonLegendBar>().lobbySelectMenuOptions;
 		}
 
 		private void Start()
@@ -192,8 +192,6 @@ namespace Multiplayer
 				if (focus)
 				{
 					list.FocusItem(0);
-					selectedMenuItem = (items[0] as MultiplayerSelectLobbyMenuItem);
-					levelInformationBox.UpdateDisplay(selectedMenuItem.boundData);
 				}
 			}
 		}

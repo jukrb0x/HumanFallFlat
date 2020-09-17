@@ -40,7 +40,7 @@ public static class GameSave
 
 	public const WorkshopItemSource latestLevelType = WorkshopItemSource.EditorPick;
 
-	public const int latestLevelID = 1;
+	public const int latestLevelID = 2;
 
 	private const string progressFileName = "progress.txt";
 

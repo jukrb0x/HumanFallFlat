@@ -409,6 +409,7 @@ public class WorkshopRepository : MonoBehaviour, IDependency
 		{
 			AddEditorPickLevel(0uL, "Thermal");
 			AddEditorPickLevel(1uL, "Factory");
+			AddEditorPickLevel(2uL, "Golf");
 		}
 	}
 

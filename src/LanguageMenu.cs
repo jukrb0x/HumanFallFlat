@@ -41,6 +41,8 @@ public class LanguageMenu : MenuTransition
 
 	public Button lithuanian;
 
+	public Button chineseTraditional;
+
 	public override void OnGotFocus()
 	{
 		base.OnGotFocus();
@@ -99,6 +101,9 @@ public class LanguageMenu : MenuTransition
 			break;
 		case "lithuanian":
 			EventSystem.current.SetSelectedGameObject(lithuanian.gameObject);
+			break;
+		case "chinese taiwan":
+			EventSystem.current.SetSelectedGameObject(chineseTraditional.gameObject);
 			break;
 		}
 	}
@@ -196,6 +201,11 @@ public class LanguageMenu : MenuTransition
 	public void Lithuanian()
 	{
 		SetLanguage("Lithuanian");
+	}
+
+	public void ChineseTraditional()
+	{
+		SetLanguage("Chinese Taiwan");
 	}
 
 	private void SetLanguage(string language)

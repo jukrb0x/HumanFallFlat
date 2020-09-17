@@ -10,6 +10,8 @@ namespace HumanAPI
 
 		public NodeOutput output;
 
+		public bool ignoreCheckpointReset;
+
 		private bool latched;
 
 		[Tooltip("Use this in order to show the prints coming from the script")]
@@ -39,11 +41,14 @@ namespace HumanAPI
 
 		public void ResetState(int checkpoint, int subObjectives)
 		{
-			if (showDebug)
+			if (!ignoreCheckpointReset)
 			{
-				Debug.Log(base.name + " Reset State ");
+				if (showDebug)
+				{
+					Debug.Log(base.name + " Reset State ");
+				}
+				latched = false;
 			}
-			latched = false;
 		}
 	}
 }

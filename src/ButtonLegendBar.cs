@@ -48,6 +48,7 @@ public class ButtonLegendBar : MonoBehaviour
 	private void Start()
 	{
 		playGlyphInitialFontSize = playGlyph.fontSize;
+		ToogleCarouselLegend(state: false);
 	}
 
 	private void OnDestroy()

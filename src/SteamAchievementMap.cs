@@ -307,6 +307,38 @@ public static class SteamAchievementMap
 			Achievement.ACH_FACTORY_FIRED
 		},
 		{
+			"Achievement1157",
+			Achievement.ACH_GOLF_COMPLETE
+		},
+		{
+			"Achievement1158",
+			Achievement.ACH_GOLF_PAR
+		},
+		{
+			"Achievement1159",
+			Achievement.ACH_GOLF_BOGEY
+		},
+		{
+			"Achievement1160",
+			Achievement.ACH_GOLF_MULLIGAN
+		},
+		{
+			"Achievement1161",
+			Achievement.ACH_CITY_COMPLETE
+		},
+		{
+			"Achievement1162",
+			Achievement.ACH_CITY_TENPIN
+		},
+		{
+			"Achievement1163",
+			Achievement.ACH_CITY_HITCHHIKER
+		},
+		{
+			"Achievement1164",
+			Achievement.ACH_CITY_TANTRUM
+		},
+		{
 			"IncAchievement000",
 			Achievement.ACH_TRAVEL_1KM
 		},

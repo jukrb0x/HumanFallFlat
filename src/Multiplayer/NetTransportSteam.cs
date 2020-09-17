@@ -668,16 +668,7 @@ namespace Multiplayer
 			joinGameCallback = calback;
 			Application.runInBackground = true;
 			RemoveOldPackets();
-			uint result = 0u;
-			uint.TryParse(SteamMatchmaking.GetLobbyData((CSteamID)serverAddress, "fl"), out result);
-			if ((result & 0x20) != 0)
-			{
-				calback(null, EChatRoomEnterResponse.k_EChatRoomEnterResponseNotAllowed.ToString());
-			}
-			else
-			{
-				SteamMatchmaking.JoinLobby((CSteamID)serverAddress);
-			}
+			SteamMatchmaking.JoinLobby((CSteamID)serverAddress);
 			joiningServerAddress = (CSteamID)serverAddress;
 		}
 

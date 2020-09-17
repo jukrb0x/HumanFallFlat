@@ -429,17 +429,21 @@ public class Game : MonoBehaviour, IGame, IDependency
 
 	public void RespawnAllPlayers(NetHost host)
 	{
+		Checkpoint checkpoint = currentLevel.GetCheckpoint(currentCheckpointNumber);
 		for (int i = 0; i < host.players.Count; i++)
 		{
-			Respawn(host.players[i].human, Vector3.left * (i % 3) * 2f + Vector3.back * (i / 3) * 2f);
+			float d = (!checkpoint.tightSpawn) ? 2f : 0.5f;
+			Respawn(host.players[i].human, Vector3.left * (i % 3) * d + Vector3.back * (i / 3) * d);
 		}
 	}
 
 	public void RespawnAllPlayers()
 	{
+		Checkpoint checkpoint = currentLevel.GetCheckpoint(currentCheckpointNumber);
 		for (int i = 0; i < Human.all.Count; i++)
 		{
-			Respawn(Human.all[i], Vector3.left * (i % 3) * 2f + Vector3.back * (i / 3) * 2f);
+			float d = (!checkpoint.tightSpawn) ? 2f : 0.5f;
+			Respawn(Human.all[i], Vector3.left * (i % 3) * d + Vector3.back * (i / 3) * d);
 		}
 	}
 
@@ -455,9 +459,9 @@ public class Game : MonoBehaviour, IGame, IDependency
 		if (!(currentLevel == null))
 		{
 			passedLevel = false;
-			Transform checkpoint = currentLevel.GetCheckpoint(currentCheckpointNumber);
+			Transform checkpointTransform = currentLevel.GetCheckpointTransform(currentCheckpointNumber);
 			ResetPlayer(human);
-			human.SpawnAt(checkpoint, offset);
+			human.SpawnAt(checkpointTransform, offset);
 		}
 	}
 

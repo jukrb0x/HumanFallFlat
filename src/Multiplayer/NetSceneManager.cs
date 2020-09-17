@@ -78,6 +78,8 @@ namespace Multiplayer
 			int subObjectives = (int)stream.ReadUInt32(6);
 			Game.currentLevel.Reset(checkpoint, subObjectives);
 			Game.currentLevel.PostEndReset(checkpoint);
+			Game.instance.currentCheckpointNumber = 0;
+			Game.instance.currentCheckpointSubObjectives = 0;
 			Debug.Log("Received Reset Level Message");
 		}
 	}

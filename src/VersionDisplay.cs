@@ -30,7 +30,7 @@ public class VersionDisplay : MonoBehaviour
 
 	public const byte presenceBinaryVersion = 1;
 
-	public static uint netCode = 18u;
+	public static uint netCode = 19u;
 
 	private bool lastDisplayedVersion;
 

@@ -38,6 +38,7 @@ namespace I2.Loc
 			Arabic,
 			Portuguese,
 			Lithuanian,
+			ChineseTraditional,
 			ColumnMax
 		}
 
@@ -45,7 +46,7 @@ namespace I2.Loc
 		{
 			public Dictionary<string, List<string>> mRows = new Dictionary<string, List<string>>();
 
-			public List<string> mColumns = new List<string>(21);
+			public List<string> mColumns = new List<string>(22);
 		}
 
 		private static string _CurrentLanguage;
@@ -58,7 +59,7 @@ namespace I2.Loc
 
 		private static string sPlatform = string.Empty;
 
-		private const int kDefaultColumns = 21;
+		private const int kDefaultColumns = 22;
 
 		private const char kSeparator = ',';
 
@@ -348,7 +349,7 @@ namespace I2.Loc
 			{
 				Debug.Log("String table already contains: " + localisationFile.mColumns[0]);
 			}
-			if (localisationFile.mColumns.Count != 21)
+			if (localisationFile.mColumns.Count != 22)
 			{
 				Debug.Log("Incorrect number of columns on line: " + lineNumber);
 			}

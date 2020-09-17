@@ -248,7 +248,11 @@ namespace TMPro
 		private static Dictionary<int, char> GetCharacters(TextAsset file)
 		{
 			Dictionary<int, char> dictionary = new Dictionary<int, char>();
-			string text = file.text;
+			string text = string.Empty;
+			if (file != null)
+			{
+				text = file.text;
+			}
 			foreach (char c in text)
 			{
 				if (!dictionary.ContainsKey(c))

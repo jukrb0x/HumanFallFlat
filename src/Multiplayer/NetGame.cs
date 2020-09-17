@@ -695,6 +695,15 @@ namespace Multiplayer
 			}
 		}
 
+		public static void LobbySettingChanged()
+		{
+		}
+
+		public static void OnLobbySettingChanged()
+		{
+			UnityEngine.Debug.Log("Received Lobby Setting Changed Message");
+		}
+
 		[Conditional("NEVER_SET_THIS_DEFINE_1234")]
 		public static void Assert(bool state, string msg = "")
 		{

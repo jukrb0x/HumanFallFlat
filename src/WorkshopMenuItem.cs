@@ -76,7 +76,7 @@ public class WorkshopMenuItem : ListViewItem
 			if (newLevelStar != null)
 			{
 				bool active = false;
-				if (!GameSave.HasSeenLatestLevel() && level.levelType == WorkshopItemSource.EditorPick && level.workshopId == 1)
+				if (!GameSave.HasSeenLatestLevel() && level.levelType == WorkshopItemSource.EditorPick && level.workshopId == 2)
 				{
 					active = true;
 				}
