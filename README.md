@@ -54,7 +54,7 @@ Click "Add" button, a prompt box indicating the failure to introduce "mscorlib.d
 
 Click "Project"->"Assembly-CSharp Properties" in the menu bar to enter the project property settings;
 
-Set the "Target Framework" to ".NET Framework 4";
+Set the "Target Framework" to ".NET Framework 3.5";
 
 Close the page and continue to generate according to the above "Using Visual Studio to build the solution".
 ```
