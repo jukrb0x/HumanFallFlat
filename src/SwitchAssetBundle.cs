@@ -307,7 +307,7 @@ public static class SwitchAssetBundle
 		}
 		byte[] array = null;
 		string streamingAssetsPath = Application.streamingAssetsPath;
-		streamingAssetsPath = Path.Combine(streamingAssetsPath, "PCBundles/");
+		streamingAssetsPath = Path.Combine(streamingAssetsPath, "MacBundles/");
 		variantBundleName = string.Format(bundleName, sVariantName);
 		streamingAssetsPath = Path.Combine(streamingAssetsPath, variantBundleName);
 		array = File.ReadAllBytes(streamingAssetsPath);

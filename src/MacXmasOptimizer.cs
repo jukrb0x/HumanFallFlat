@@ -5,6 +5,11 @@ public class MacXmasOptimizer : MonoBehaviour
 {
 	public Light[] problematicLights;
 
+	private void Start()
+	{
+		StartCoroutine(DisableLights());
+	}
+
 	private IEnumerator DisableLights()
 	{
 		yield return null;

@@ -197,7 +197,7 @@ namespace InControl
 			{
 				return false;
 			}
-			Platform = Utility.GetWindowsVersion().ToUpper();
+			Platform = (SystemInfo.operatingSystem + " " + SystemInfo.deviceModel).ToUpper();
 			enabled = true;
 			initialTime = 0f;
 			currentTime = 0f;
@@ -215,10 +215,6 @@ namespace InControl
 			if (EnableNativeInput && NativeInputDeviceManager.Enable())
 			{
 				flag = false;
-			}
-			if (EnableXInput && flag)
-			{
-				XInputDeviceManager.Enable();
 			}
 			if (InputManager.OnSetup != null)
 			{

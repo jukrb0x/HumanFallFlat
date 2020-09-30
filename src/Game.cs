@@ -631,6 +631,45 @@ public class Game : MonoBehaviour, IGame, IDependency
 
 	private void FixAssetBundleShaders(bool lobby)
 	{
+		if (workshopLevel == null && (!lobby || multiplayerLobbyLevel <= 16))
+		{
+			return;
+		}
+		RenderSettings.skybox.shader = Shader.Find(RenderSettings.skybox.shader.name);
+		if (RenderSettings.skybox.shader == null)
+		{
+			UnityEngine.Debug.Log("FixAssetBundleShaders:shader not found:sb: " + RenderSettings.skybox.shader.name);
+		}
+		Material[] array = Resources.FindObjectsOfTypeAll<Material>();
+		Material[] array2 = array;
+		foreach (Material material in array2)
+		{
+			Shader shader = Shader.Find(material.shader.name);
+			if (shader != null)
+			{
+				material.shader = shader;
+				if (material.shader.name == "Standard")
+				{
+					float @float = material.GetFloat("_Mode");
+					if (@float == 0f)
+					{
+						material.renderQueue = -1;
+					}
+					else if (@float == 1f)
+					{
+						material.renderQueue = 2450;
+					}
+					else
+					{
+						material.renderQueue = 3000;
+					}
+				}
+			}
+			else
+			{
+				UnityEngine.Debug.Log("FixAssetBundleShaders:shader not found: " + material.shader.name);
+			}
+		}
 	}
 
 	public void FixAssetBundleImport(bool lobby = false)

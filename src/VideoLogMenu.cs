@@ -110,7 +110,6 @@ public class VideoLogMenu : MenuTransition
 	private void PrepareCompleted(VideoPlayer source)
 	{
 		image.texture = video.texture;
-		image.material = HFFResources.instance.PCLinearMovieFixMenu;
 		if (video != null)
 		{
 			video.Play();

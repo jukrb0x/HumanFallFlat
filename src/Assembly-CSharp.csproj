@@ -952,8 +952,6 @@
     <Compile Include="InControl\XboxOneWinProfile.cs" />
     <Compile Include="InControl\XiamoiMacProfile.cs" />
     <Compile Include="InControl\XiamoiWinProfile.cs" />
-    <Compile Include="InControl\XInputDevice.cs" />
-    <Compile Include="InControl\XInputDeviceManager.cs" />
     <Compile Include="InControl\XTR55_G2_MacNativeProfile.cs" />
     <Compile Include="InControl\XTR55_G2_MacUnityProfile.cs" />
     <Compile Include="InControl\XTR55_G2_WindowsNativeProfile.cs" />
@@ -1610,15 +1608,6 @@
     <Compile Include="WorkshopRepository.cs" />
     <Compile Include="WorkshopTypeRepository.cs" />
     <Compile Include="WorkshopUpload.cs" />
-    <Compile Include="XInputDotNetPure\ButtonState.cs" />
-    <Compile Include="XInputDotNetPure\GamePad.cs" />
-    <Compile Include="XInputDotNetPure\GamePadButtons.cs" />
-    <Compile Include="XInputDotNetPure\GamePadDPad.cs" />
-    <Compile Include="XInputDotNetPure\GamePadState.cs" />
-    <Compile Include="XInputDotNetPure\GamePadThumbSticks.cs" />
-    <Compile Include="XInputDotNetPure\GamePadTriggers.cs" />
-    <Compile Include="XInputDotNetPure\Imports.cs" />
-    <Compile Include="XInputDotNetPure\PlayerIndex.cs" />
     <Compile Include="XmasAngelAchievement.cs" />
     <Compile Include="XmasHatAchievement.cs" />
     <Compile Include="XmasLandAchievement.cs" />
@@ -1633,257 +1622,257 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\reference\osx\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="HumanAPI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\HumanAPI.dll</HintPath>
+      <HintPath>..\reference\osx\HumanAPI.dll</HintPath>
     </Reference>
     <Reference Include="KdTreeLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\KdTreeLib.dll</HintPath>
+      <HintPath>..\reference\osx\KdTreeLib.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\Mono.Security.dll</HintPath>
+      <HintPath>..\reference\osx\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="pb_Stl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\pb_Stl.dll</HintPath>
+      <HintPath>..\reference\osx\pb_Stl.dll</HintPath>
     </Reference>
     <Reference Include="Poly2Tri, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\Poly2Tri.dll</HintPath>
+      <HintPath>..\reference\osx\Poly2Tri.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderCore-Unity5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\ProBuilderCore-Unity5.dll</HintPath>
+      <HintPath>..\reference\osx\ProBuilderCore-Unity5.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderMeshOps-Unity5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\ProBuilderMeshOps-Unity5.dll</HintPath>
+      <HintPath>..\reference\osx\ProBuilderMeshOps-Unity5.dll</HintPath>
     </Reference>
     <Reference Include="SumoPlatformLibrary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\SumoPlatformLibrary.dll</HintPath>
+      <HintPath>..\reference\osx\SumoPlatformLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.Analytics.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ARModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterInputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ClusterInputModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ClusterInputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterRendererModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GameCenterModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.GridModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.Networking.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticlesLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ParticlesLegacyModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ParticlesLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StyleSheetsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.StyleSheetsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.StyleSheetsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Timeline, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.Timeline.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityConnectModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.VRModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WebModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.WebModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.WebModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityEngine.WindModule.dll</HintPath>
+      <HintPath>..\reference\osx\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityFbxPrefab, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\reference\win\UnityFbxPrefab.dll</HintPath>
+      <HintPath>..\reference\osx\UnityFbxPrefab.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

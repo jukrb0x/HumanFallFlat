@@ -364,39 +364,9 @@ namespace InControl
 			return 0;
 		}
 
-		public static string HKLM_GetString(string path, string key)
-		{
-			try
-			{
-				RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(path);
-				if (registryKey == null)
-				{
-					return string.Empty;
-				}
-				return (string)registryKey.GetValue(key);
-			}
-			catch
-			{
-				return null;
-			}
-		}
-
-		public static string GetWindowsVersion()
-		{
-			string text = HKLM_GetString("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", "ProductName");
-			if (text != null)
-			{
-				string text2 = HKLM_GetString("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", "CSDVersion");
-				string text3 = (!Is32Bit) ? "64Bit" : "32Bit";
-				int systemBuildNumber = GetSystemBuildNumber();
-				return text + ((text2 == null) ? string.Empty : (" " + text2)) + " " + text3 + " Build " + systemBuildNumber;
-			}
-			return SystemInfo.operatingSystem;
-		}
-
 		public static int GetSystemBuildNumber()
 		{
-			return Environment.OSVersion.Version.Build;
+			return 0;
 		}
 
 		internal static void LoadScene(string sceneName)
@@ -406,7 +376,7 @@ namespace InControl
 
 		internal static string PluginFileExtension()
 		{
-			return ".dll";
+			return ".bundle";
 		}
 	}
 }

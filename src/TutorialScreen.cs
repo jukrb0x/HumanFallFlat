@@ -196,10 +196,7 @@ public class TutorialScreen : MonoBehaviour
 		}
 		if (movie != null && movieMaterialInstance == null)
 		{
-			if (movie.texture != null)
-			{
-				movieMaterialInstance = Object.Instantiate(HFFResources.instance.PCLinearMovieFixGame);
-			}
+			movieMaterialInstance = new Material(movieMaterial);
 			reinitMaterial = true;
 		}
 		if (reinitMaterial && movie != null && movieMaterialInstance != null)
