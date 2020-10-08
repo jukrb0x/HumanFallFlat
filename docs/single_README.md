@@ -18,15 +18,16 @@ According to the description in [the README file](/README.md) of the project, we
 
 **The python script file needs the support of the glob library. The syntax of python3 is used here, and it is only tested in the python3.8 environment without error. Python2 is not tested, please pay attention when using it.**
 
-> Open cmd/powershell/bash/zsh in the single folder, and then enter the following command:
+　　Open cmd/powershell/bash/zsh in the single folder, and then enter the following command:
 
 ```
 python csc_generator.py
 ```
 
-> If the system environment is correct and everything is running normally, you will see the csc command line output from the console and the generation of the single/complie_code.txt file. The complie_code.txt file is also written in the csc command line which is used for compilation.
-
-> Copy the csc command line. Make sure all characters are copied, and then paste them into cmd/powershell/bash/zsh. Press Enter. If the single/Assembly-CSharp.dll file is generated, the execution is normal. If it is not generated, check whether there is an error-level error in the single/errorlog.log. Resolve these errors in the Assembly-CSharp.cs file, copy the csc compilation command line again and recompile.
+　　If the system environment is correct and everything is running normally, you will see the csc command line output from the console and the generation of the single/complie_code.txt file.  
+　　The complie_code.txt file is also written in the csc command line which is used for compilation.  
+　　Copy the csc command line. Make sure all characters are copied, and then paste them into cmd/powershell/bash/zsh. Press Enter. If the single/Assembly-CSharp.dll file is generated, the execution is normal.  
+　　If it is not generated, check whether there is an error-level error in the single/errorlog.log. Resolve these errors in the Assembly-CSharp.cs file, copy the csc compilation command line again and recompile.
 
 If there is no single/errorlog.log or single/complie_code.txt generated, please check the system environment and the code of single/csc_generator.py. If you have any questions, please submit an issue.
 
