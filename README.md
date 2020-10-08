@@ -31,24 +31,24 @@ This project contains two branches. The master branch represents the code of Win
 
 We recommend using Visual Studio to build the solution and generate the Assembly-CSharp.dll file:
 
-&nbsp;&nbsp;Open Assembly-CSharp.sln file by Visual Studio IDE;  
-&nbsp;&nbsp;Choose "Assembly-CSharp" from the "Solution Explorer" on the right;  
-&nbsp;&nbsp;Right click the item, choose "Build" menu;  
-&nbsp;&nbsp;Then you can see the result of building at the bottom.
+　　Open Assembly-CSharp.sln file by Visual Studio IDE;  
+　　Choose "Assembly-CSharp" from the "Solution Explorer" on the right;  
+　　Right click the item, choose "Build" menu;  
+　　Then you can see the result of building at the bottom.
 
 <br />
 
 Build Visual Studio solution through the /src/Assembly-CSharp.csproj file:
 
-&nbsp;&nbsp;Open /src/Assembly-CSharp.csproj file by Visual Studio IDE;  
-&nbsp;&nbsp;Choose "References" from the "Solution Explorer" on the right;  
-&nbsp;&nbsp;Right click the item, choose "Add Reference..." menu;  
-&nbsp;&nbsp;Choose "Browse" on the left of the pop-up "Reference Manager" dialog, then click "Browse" button at the bottom;  
-&nbsp;&nbsp;According to the system version used, select different folders under the "reference" folder and import all the dll files;  
-&nbsp;&nbsp;Click "Add" button, a prompt box indicating the failure to introduce "mscorlib.dll" may pop up, click "OK" directly;  
-&nbsp;&nbsp;Click "Project"->"Assembly-CSharp Properties" in the menu bar to enter the project property settings;  
-&nbsp;&nbsp;Set the "Target Framework" to ".NET Framework 3.5";  
-&nbsp;&nbsp;Close the page and continue to generate according to the above "Using Visual Studio to build the solution".
+　　Open /src/Assembly-CSharp.csproj file by Visual Studio IDE;  
+　　Choose "References" from the "Solution Explorer" on the right;  
+　　Right click the item, choose "Add Reference..." menu;  
+　　Choose "Browse" on the left of the pop-up "Reference Manager" dialog, then click "Browse" button at the bottom;  
+　　According to the system version used, select different folders under the "reference" folder and import all the dll files;  
+　　Click "Add" button, a prompt box indicating the failure to introduce "mscorlib.dll" may pop up, click "OK" directly;  
+　　Click "Project"->"Assembly-CSharp Properties" in the menu bar to enter the project property settings;  
+　　Set the "Target Framework" to ".NET Framework 3.5";  
+　　Close the page and continue to generate according to the above "Using Visual Studio to build the solution".
 
 <br />
 
@@ -56,16 +56,16 @@ Build by csc command:
 
 **Warning: This method should not be used in csproj compilation, it only supports c sharp single file compilation.**
 
-&nbsp;&nbsp;So, first you need get a single file of Assembly-Csharp.cs, that is default output of [ILSpy](https://github.com/icsharpcode/ILSpy) decompiler.  
-&nbsp;&nbsp;Then, write a csc command line, use -out:\<path\> to point output dll file location, use -t:library to make a dll file.  
-&nbsp;&nbsp;That's not enough, you also need -nostdlib to avoid using default .net framework whose version is not correct.  
-&nbsp;&nbsp;Use -noconfig to avoid using default mscorlib.dll whose version is also not correct.  
-&nbsp;&nbsp;Use many -t:\<path\> to import all reference dll files. Make sure all of those be imported in your csc command line.  
-&nbsp;&nbsp;To do so, you may type some dozens of -t:\<path\> parameters, so be careful and patient.  
-&nbsp;&nbsp;If you have written all of those parameters, the last you need to write is the location of single Assembly-Csharp.cs file.  
-&nbsp;&nbsp;Last, Type Enter, run that command and if you are lucky you will see many warnings but no errors.  
-&nbsp;&nbsp;If you are unlucky, you should add -errorlog:\<path\> to point where to write error logs and open this file.  
-&nbsp;&nbsp;Search errors, deal with these errors and repeat those steps until you see no errors.
+　　So, first you need get a single file of Assembly-Csharp.cs, that is default output of [ILSpy](https://github.com/icsharpcode/ILSpy) decompiler.  
+　　Then, write a csc command line, use -out:\<path\> to point output dll file location, use -t:library to make a dll file.  
+　　That's not enough, you also need -nostdlib to avoid using default .net framework whose version is not correct.  
+　　Use -noconfig to avoid using default mscorlib.dll whose version is also not correct.  
+　　Use many -t:\<path\> to import all reference dll files. Make sure all of those be imported in your csc command line.  
+　　To do so, you may type some dozens of -t:\<path\> parameters, so be careful and patient.  
+　　If you have written all of those parameters, the last you need to write is the location of single Assembly-Csharp.cs file.  
+　　Last, Type Enter, run that command and if you are lucky you will see many warnings but no errors.  
+　　If you are unlucky, you should add -errorlog:\<path\> to point where to write error logs and open this file.  
+　　Search errors, deal with these errors and repeat those steps until you see no errors.
 
 There is an example of csc command line (Note: We don't guarantee its availability):
 
@@ -148,20 +148,20 @@ More detail about csc command, see [this](https://docs.microsoft.com/zh-cn/dotne
 
 Build by msbuild command:
 
-&nbsp;&nbsp;If you want to compile csproj you should go to src folder and run the next command:
+　　If you want to compile csproj you should go to src folder and run the next command:
 
 ```
 msbuild Assembly-CSharp.csproj
 ```
 
-&nbsp;&nbsp;Then if no errors you will see bin folder was generated in src folder, that's what we need.  
-&nbsp;&nbsp;You can also use msbuild to compile sln file (Visual Studio project file), run the next command:
+　　Then if no errors you will see bin folder was generated in src folder, that's what we need.  
+　　You can also use msbuild to compile sln file (Visual Studio project file), run the next command:
 
 ```
 msbuild Assembly-CSharp.sln
 ```
 
-&nbsp;&nbsp;We have not tried such usage, but it is theoretically feasible.
+　　We have not tried such usage, but it is theoretically feasible.
 
 More detail about msbuild, see [this](https://docs.microsoft.com/zh-cn/visualstudio/msbuild/msbuild?view=vs-2019).
 
@@ -173,22 +173,22 @@ More detail about msbuild, see [this](https://docs.microsoft.com/zh-cn/visualstu
 The file index of this project is the following:
 
 HumanFallFlat  
-├── Assembly-CSharp.sln         # The Visual Studio project file  
-├── README.md                   # The introduction file of this project  
-├── docs                        # This folder is used to store all documents  
-│   ├── README_cn.md            # The introduction file of this project by Chinese  
-│   ├── single_README.md        # The introduction file of the single folder  
-│   └── single_README_cn.md     # The introduction file of the single folder by Chinese  
-├── reference                   # This folder is used to store all references  
-│   └── win                     # This folder is used to store all references in Windows  
-│       ├── *.dll               # All dll files in the game  
-├── single                      # This folder is used to store all about the single-file code   
-│   ├── Assembly-CSharp.cs      # The source code of the game in a single file  
-│   ├── complie_code.txt        # The csc command line is used to compile Assembly-CSharp.cs  
-│   └── csc_generator.py        # The python script is used to generate the csc command line  
-└── src                         # This folder is used to store all source code files  
-    ├── *.cs                    # The C# source code files  
-    ├── Assembly-CSharp.csproj  # The C# project file
+|-- Assembly-CSharp.sln　　　　 　 The Visual Studio project file  
+|-- README.md　　　　　　　　　　The introduction file of this project  
+|-- docs　　　　　　　　　　　 　　 This folder is used to store all documents  
+|　　　|-- README_cn.md　　　　　The introduction file of this project by Chinese  
+|　　　|-- single_README.md　　 　 The introduction file of the single folder  
+|　　　|-- single_README_cn.md　　The introduction file of the single folder by Chinese  
+|-- reference　　　　　　　　 　　　 This folder is used to store all references  
+|　　　|-- win　　　　　　　　　　　This folder is used to store all references in Windows  
+|　　　　　　|-- \*.dll　　　　　　　　All dll files in the game  
+|-- single　　　　　　　　　　　　　 This folder is used to store all about the single-file code   
+|　　　|-- Assembly-CSharp.cs　　　The source code of the game in a single file  
+|　　　|-- complie_code.txt　　　　　The csc command line is used to compile Assembly-CSharp.cs  
+|　　　|-- csc_generator.py　　　　　The python script is used to generate the csc command line  
+|-- src　　　　　　　　　　　　　 　 This folder is used to store all source code files  
+　　　 |-- \*.cs　　　　　　　　　　　 The C# source code files  
+　　　 |-- Assembly-CSharp.csproj　 The C# project file
 
 <br />
 

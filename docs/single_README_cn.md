@@ -23,9 +23,12 @@
 ```
 python csc_generator.py
 ```
-　　若系统环境无误，一切运行正常，则会看到控制台输出的csc命令行以及single/complie_code.txt文件的生成。complie_code.txt文件写入的也是用于编译的csc命令行。  
-　　复制该csc命令行，确保全部字符均被复制，之后粘贴到cmd/powershell/bash/zsh中，按下Enter键，若生成single/Assembly-CSharp.dll文件，则执行正常。  
-　　若未生成，检查single/errorlog.log中是否存在error级的错误。在Assembly-CSharp.cs文件中解决这些错误，重新复制csc编译命令行，重新编译。
+　　若系统环境无误，一切运行正常，则会看到控制台输出的csc命令行以及single/complie_code.txt文件的生成。  
+　　complie_code.txt文件写入的也是用于编译的csc命令行。  
+　　复制该csc命令行，确保全部字符均被复制，之后粘贴到cmd/powershell/bash/zsh中，按下Enter键。  
+　　若生成single/Assembly-CSharp.dll文件，则执行正常。  
+　　若未生成，检查single/errorlog.log中是否存在error级的错误。  
+　　在Assembly-CSharp.cs文件中解决这些错误，重新复制csc编译命令行，重新编译。
 
 若无single/errorlog.log或single/complie_code.txt生成，请检查系统环境和single/csc_generator.py的代码。如有问题欢迎提出issue进行交流。
 
