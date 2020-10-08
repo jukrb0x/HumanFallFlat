@@ -43,9 +43,12 @@ Build Visual Studio solution through the /src/Assembly-CSharp.csproj file:
 　　Open /src/Assembly-CSharp.csproj file by Visual Studio IDE;  
 　　Choose "References" from the "Solution Explorer" on the right;  
 　　Right click the item, choose "Add Reference..." menu;  
-　　Choose "Browse" on the left of the pop-up "Reference Manager" dialog, then click "Browse" button at the bottom;  
-　　According to the system version used, select different folders under the "reference" folder and import all the dll files;  
-　　Click "Add" button, a prompt box indicating the failure to introduce "mscorlib.dll" may pop up, click "OK" directly;  
+　　Choose "Browse" on the left of the pop-up "Reference Manager" dialog;  
+　　Then click "Browse" button at the bottom;  
+　　According to the system version used, select different folders under the "reference" folder;  
+　　And import all the dll files;  
+　　Click "Add" button, a prompt box indicating the failure to introduce "mscorlib.dll" may pop up;  
+　　Click "OK" directly;  
 　　Click "Project"->"Assembly-CSharp Properties" in the menu bar to enter the project property settings;  
 　　Set the "Target Framework" to ".NET Framework 3.5";  
 　　Close the page and continue to generate according to the above "Using Visual Studio to build the solution".
@@ -60,9 +63,10 @@ Build by csc command:
 　　Then, write a csc command line, use -out:\<path\> to point output dll file location, use -t:library to make a dll file.  
 　　That's not enough, you also need -nostdlib to avoid using default .net framework whose version is not correct.  
 　　Use -noconfig to avoid using default mscorlib.dll whose version is also not correct.  
-　　Use many -t:\<path\> to import all reference dll files. Make sure all of those be imported in your csc command line.  
+　　Use many -t:\<path\> to import all reference dll files.  
+　　Make sure all of those be imported in your csc command line.  
 　　To do so, you may type some dozens of -t:\<path\> parameters, so be careful and patient.  
-　　If you have written all of those parameters, the last you need to write is the location of single Assembly-Csharp.cs file.  
+　　If you have written all of those parameters, the last you need to write is the location of Assembly-Csharp.cs.  
 　　Last, Type Enter, run that command and if you are lucky you will see many warnings but no errors.  
 　　If you are unlucky, you should add -errorlog:\<path\> to point where to write error logs and open this file.  
 　　Search errors, deal with these errors and repeat those steps until you see no errors.
