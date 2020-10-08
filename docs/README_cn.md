@@ -91,38 +91,75 @@ Unity游戏《人类：一败涂地》的反编译源代码。
 
 ```
 csc -t:library -out:./Assembly-CSharp.dll -errorlog:./errorlog.log -nostdlib -noconfig \
-    -r:../UnityEngine.TerrainPhysicsModule.dll -r:../UnityEngine.SpriteMaskModule.dll \
-    -r:../UnityEngine.CrashReportingModule.dll -r:../UnityEngine.Analytics.dll \
-    -r:../pb_Stl.dll -r:../UnityEngine.UnityAnalyticsModule.dll \
-    -r:../UnityEngine.UnityWebRequestWWWModule.dll -r:../UnityEngine.ARModule.dll \
-    -r:../UnityEngine.AccessibilityModule.dll -r:../HumanAPI.dll \
-    -r:../UnityEngine.SpriteShapeModule.dll -r:../UnityEngine.TextRenderingModule.dll \
-    -r:../ProBuilderMeshOps-Unity5.dll -r:../UnityEngine.UnityWebRequestTextureModule.dll \
-    -r:../UnityEngine.StandardEvents.dll -r:../UnityEngine.AssetBundleModule.dll \
-    -r:../UnityEngine.AnimationModule.dll -r:../UnityEngine.AudioModule.dll \
-    -r:../SumoPlatformLibrary.dll -r:../UnityEngine.ClusterInputModule.dll \
-    -r:../UnityEngine.InputModule.dll -r:../UnityEngine.DirectorModule.dll \
-    -r:../mscorlib.dll -r:../UnityFbxPrefab.dll -r:../UnityEngine.GameCenterModule.dll \
-    -r:../UnityEngine.Physics2DModule.dll -r:../UnityEngine.UnityConnectModule.dll \
-    -r:../UnityEngine.dll -r:../UnityEngine.UIElementsModule.dll -r:../UnityEngine.UIModule.dll \
-    -r:../UnityEngine.UI.dll -r:../UnityEngine.ParticlesLegacyModule.dll \
-    -r:../UnityEngine.StyleSheetsModule.dll -r:../UnityEngine.WebModule.dll \
-    -r:../UnityEngine.Timeline.dll -r:../UnityEngine.GridModule.dll -r:../KdTreeLib.dll \
-    -r:../UnityEngine.TerrainModule.dll -r:../Assembly-CSharp-firstpass.dll \
-    -r:../UnityEngine.VRModule.dll -r:../UnityEngine.JSONSerializeModule.dll \
-    -r:../UnityEngine.SpatialTracking.dll -r:../Mono.Security.dll -r:../Poly2Tri.dll \
-    -r:../System.dll -r:../UnityEngine.SharedInternalsModule.dll \
-    -r:../UnityEngine.ImageConversionModule.dll -r:../UnityEngine.TilemapModule.dll \
-    -r:../UnityEngine.ParticleSystemModule.dll -r:../UnityEngine.VehiclesModule.dll \
-    -r:../UnityEngine.PhysicsModule.dll -r:../UnityEngine.CoreModule.dll \
-    -r:../UnityEngine.PerformanceReportingModule.dll -r:../System.Xml.dll \
-    -r:../UnityEngine.WindModule.dll -r:../UnityEngine.ScreenCaptureModule.dll \
-    -r:../UnityEngine.ClusterRendererModule.dll -r:../UnityEngine.UnityWebRequestModule.dll \
-    -r:../ProBuilderCore-Unity5.dll -r:../UnityEngine.Networking.dll \
-    -r:../UnityEngine.UnityWebRequestAudioModule.dll -r:../UnityEngine.UNETModule.dll \
-    -r:../UnityEngine.ClothModule.dll -r:../UnityEngine.AIModule.dll \
-    -r:../UnityEngine.IMGUIModule.dll -r:../System.Core.dll -r:../UnityEngine.VideoModule.dll \
+    -r:../reference/win/UnityEngine.TerrainPhysicsModule.dll \
+    -r:../reference/win/UnityEngine.SpriteMaskModule.dll \
+    -r:../reference/win/UnityEngine.CrashReportingModule.dll \
+    -r:../reference/win/UnityEngine.Analytics.dll \
+    -r:../reference/win/pb_Stl.dll \
+    -r:../reference/win/UnityEngine.UnityAnalyticsModule.dll \
+    -r:../reference/win/UnityEngine.UnityWebRequestWWWModule.dll \
+    -r:../reference/win/UnityEngine.ARModule.dll \
+    -r:../reference/win/UnityEngine.AccessibilityModule.dll \
+    -r:../reference/win/HumanAPI.dll \
+    -r:../reference/win/UnityEngine.SpriteShapeModule.dll \
+    -r:../reference/win/UnityEngine.TextRenderingModule.dll \
+    -r:../reference/win/ProBuilderMeshOps-Unity5.dll \
+    -r:../reference/win/UnityEngine.UnityWebRequestTextureModule.dll \
+    -r:../reference/win/UnityEngine.StandardEvents.dll \
+    -r:../reference/win/UnityEngine.AssetBundleModule.dll \
+    -r:../reference/win/UnityEngine.AnimationModule.dll \
+    -r:../reference/win/UnityEngine.AudioModule.dll \
+    -r:../reference/win/SumoPlatformLibrary.dll \
+    -r:../reference/win/UnityEngine.ClusterInputModule.dll \
+    -r:../reference/win/UnityEngine.InputModule.dll \
+    -r:../reference/win/UnityEngine.DirectorModule.dll \
+    -r:../reference/win/mscorlib.dll \
+    -r:../reference/win/UnityFbxPrefab.dll \
+    -r:../reference/win/UnityEngine.GameCenterModule.dll \
+    -r:../reference/win/UnityEngine.Physics2DModule.dll \
+    -r:../reference/win/UnityEngine.UnityConnectModule.dll \
+    -r:../reference/win/UnityEngine.dll \
+    -r:../reference/win/UnityEngine.UIElementsModule.dll \
+    -r:../reference/win/UnityEngine.UIModule.dll \
+    -r:../reference/win/UnityEngine.UI.dll \
+    -r:../reference/win/UnityEngine.ParticlesLegacyModule.dll \
+    -r:../reference/win/UnityEngine.StyleSheetsModule.dll \
+    -r:../reference/win/UnityEngine.WebModule.dll \
+    -r:../reference/win/UnityEngine.Timeline.dll \
+    -r:../reference/win/UnityEngine.GridModule.dll \
+    -r:../reference/win/KdTreeLib.dll \
+    -r:../reference/win/UnityEngine.TerrainModule.dll \
+    -r:../reference/win/Assembly-CSharp-firstpass.dll \
+    -r:../reference/win/UnityEngine.VRModule.dll \
+    -r:../reference/win/UnityEngine.JSONSerializeModule.dll \
+    -r:../reference/win/UnityEngine.SpatialTracking.dll \
+    -r:../reference/win/Mono.Security.dll \
+    -r:../reference/win/Poly2Tri.dll \
+    -r:../reference/win/System.dll \
+    -r:../reference/win/UnityEngine.SharedInternalsModule.dll \
+    -r:../reference/win/UnityEngine.ImageConversionModule.dll \
+    -r:../reference/win/UnityEngine.TilemapModule.dll \
+    -r:../reference/win/UnityEngine.ParticleSystemModule.dll \
+    -r:../reference/win/UnityEngine.VehiclesModule.dll \
+    -r:../reference/win/UnityEngine.PhysicsModule.dll \
+    -r:../reference/win/UnityEngine.CoreModule.dll \
+    -r:../reference/win/UnityEngine.PerformanceReportingModule.dll \
+    -r:../reference/win/System.Xml.dll \
+    -r:../reference/win/UnityEngine.WindModule.dll \
+    -r:../reference/win/UnityEngine.ScreenCaptureModule.dll \
+    -r:../reference/win/UnityEngine.ClusterRendererModule.dll \
+    -r:../reference/win/UnityEngine.UnityWebRequestModule.dll \
+    -r:../reference/win/ProBuilderCore-Unity5.dll \
+    -r:../reference/win/UnityEngine.Networking.dll \
+    -r:../reference/win/UnityEngine.UnityWebRequestAudioModule.dll \
+    -r:../reference/win/UnityEngine.UNETModule.dll \
+    -r:../reference/win/UnityEngine.ClothModule.dll \
+    -r:../reference/win/UnityEngine.AIModule.dll \
+    -r:../reference/win/UnityEngine.IMGUIModule.dll \
+    -r:../reference/win/System.Core.dll \
+    -r:../reference/win/UnityEngine.VideoModule.dll \
     ./Assembly-CSharp.cs
+
 ```
 
 更多关于csc命令的细节，[见此](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe)。
@@ -148,6 +185,31 @@ msbuild Assembly-CSharp.sln
 > 我们还没有试过这个用法，但是它理论上可行。
 
 更多关于msbuild命令的细节，[见此](https://docs.microsoft.com/zh-cn/visualstudio/msbuild/msbuild?view=vs-2019)。
+
+<br />
+
+## 目录
+
+
+本项目的文件目录如下：
+
+HumanFallFlat
+├── Assembly-CSharp.sln         # Visual Studio项目文件
+├── README.md                   # 项目自述文件
+├── docs                        # 这个文件夹用来储存所有文档
+│   ├── README_cn.md            # 中文版项目自述文件
+│   ├── single_README.md        # single文件夹自述文件
+│   └── single_README_cn.md     # 中文版single文件夹自述文件
+├── reference                   # 这个文件夹用于储存所有依赖文件
+│   └── win                     # 这个文件夹用于储存所有Windows系统下的依赖文件
+│       ├── *.dll               # 游戏里的所有dll文件
+├── single                      # 这个文件夹用于储存所有和单文件游戏源码相关的东西
+│   ├── Assembly-CSharp.cs      # 单文件版的游戏源码
+│   ├── complie_code.txt        # csc命令行，用于编译Assembly-CSharp.cs
+│   └── csc_generator.py        # python脚本文件，用于生成上面的csc命令行
+└── src                         # 这个文件夹用来储存所有源代码
+    ├── *.cs                    # C#源代码
+    ├── Assembly-CSharp.csproj  # C#项目文件
 
 <br />
 
