@@ -29,7 +29,7 @@ This project contains two branches. The master branch represents the code of Win
 ## Build
 
 
-We recommend using Visual Studio to build the solution and generate the Assembly-CSharp.dll file:
+### We recommend using Visual Studio to build the solution and generate the Assembly-CSharp.dll file:
 
 　　Open Assembly-CSharp.sln file by Visual Studio IDE;  
 　　Choose "Assembly-CSharp" from the "Solution Explorer" on the right;  
@@ -38,7 +38,7 @@ We recommend using Visual Studio to build the solution and generate the Assembly
 
 <br />
 
-Build Visual Studio solution through the /src/Assembly-CSharp.csproj file:
+### Build Visual Studio solution through the /src/Assembly-CSharp.csproj file:
 
 　　Open /src/Assembly-CSharp.csproj file by Visual Studio IDE;  
 　　Choose "References" from the "Solution Explorer" on the right;  
@@ -55,7 +55,7 @@ Build Visual Studio solution through the /src/Assembly-CSharp.csproj file:
 
 <br />
 
-Build by csc command:
+### Build by csc command:
 
 **Warning: This method should not be used in csproj compilation, it only supports c sharp single file compilation.**
 
@@ -150,7 +150,7 @@ More detail about csc command, see [this](https://docs.microsoft.com/zh-cn/dotne
 
 <br />
 
-Build by msbuild command:
+### Build by msbuild command:
 
 　　If you want to compile csproj you should go to src folder and run the next command:
 

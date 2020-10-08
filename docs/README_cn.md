@@ -29,7 +29,7 @@ Unity游戏《人类：一败涂地》的反编译源代码。
 ## 构建
 
 
-建议使用Visual Studio进行解决方案构建，生成Assembly-CSharp.dll文件：
+### 建议使用Visual Studio进行解决方案构建，生成Assembly-CSharp.dll文件：
 
 　　使用Visual Studio IDE打开Assembly-CSharp.sln文件；  
 　　在右侧“解决方案资源管理器”中选择“Assembly-CSharp”项；  
@@ -38,7 +38,7 @@ Unity游戏《人类：一败涂地》的反编译源代码。
 
 </br>
 
-通过/src/Assembly-CSharp.csproj文件进行Visual Studio解决方案构建：
+### 通过/src/Assembly-CSharp.csproj文件进行Visual Studio解决方案构建：
 
 　　使用Visual Studio IDE打开/src/Assembly-CSharp.csproj文件；  
 　　在右侧“解决方案资源管理器”中选择“引用”；  
@@ -52,7 +52,7 @@ Unity游戏《人类：一败涂地》的反编译源代码。
 
 </br>
 
-使用csc命令进行构建:
+### 使用csc命令进行构建:
 
 **注意：此方法不应该用作csproj项目文件的编译，它仅支持编译c#代码文件！**
 
@@ -148,7 +148,7 @@ csc -t:library -out:./Assembly-CSharp.dll -errorlog:./errorlog.log -nostdlib -no
 
 <br />
 
-使用msbuild命令进行构建：
+### 使用msbuild命令进行构建：
 
 　　如果你想要编译csproj项目文件，你应当进入src文件夹并执行如下命令：
 
