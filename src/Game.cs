@@ -200,6 +200,7 @@ public class Game : MonoBehaviour, IGame, IDependency
 			MenuSystem.instance.ShowPauseMenu();
 			if (NetGame.isLocal)
 			{
+				// disable tick
 				Time.timeScale = 0f;
 				state = GameState.Paused;
 			}

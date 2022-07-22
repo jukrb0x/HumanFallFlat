@@ -61,6 +61,7 @@ public class Ragdoll : MonoBehaviour
 		Transform[] componentsInChildren = GetComponentsInChildren<Transform>();
 		for (int i = 0; i < componentsInChildren.Length; i++)
 		{
+			// normalize the name convention
 			dictionary[componentsInChildren[i].name.ToLower()] = componentsInChildren[i];
 		}
 		partHead = FindSegment(dictionary, "head");
@@ -118,6 +119,8 @@ public class Ragdoll : MonoBehaviour
 		configurableJoint.connectedAnchor = Vector3.zero;
 	}
 
+	// Good:
+	// automatically setup the components instead of manually adding them in editor
 	public void BindBall(Transform ballTransform)
 	{
 		partBall = BindSegmanet(ballTransform);
@@ -159,6 +162,7 @@ public class Ragdoll : MonoBehaviour
 		part.sensor.groundCheck = true;
 	}
 
+	// same usage in project settings -> physics -> setup a layer which doesn't collide itself 
 	private void SetupColliders()
 	{
 		Physics.IgnoreCollision(partChest.collider, partHead.collider);
