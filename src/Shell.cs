@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// console: command line shell
 public class Shell : MonoBehaviour
 {
 	public TMP_InputField input;
