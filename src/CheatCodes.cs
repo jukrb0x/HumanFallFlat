@@ -3,6 +3,7 @@ using Multiplayer;
 using System;
 using UnityEngine;
 
+// console command cheat code
 public class CheatCodes : MonoBehaviour
 {
 	public static bool cheatMode;

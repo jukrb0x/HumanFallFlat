@@ -16,7 +16,7 @@ public class GrabManager : MonoBehaviour
 	private void OnEnable()
 	{
 		all.Add(this);
-		human = GetComponentInParent<Human>();
+		human = GetComponentInParent<Human>(); // GrabManager is a component of Human
 	}
 
 	private void OnDisable()

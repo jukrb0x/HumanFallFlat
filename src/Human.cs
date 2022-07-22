@@ -99,7 +99,10 @@ public class Human : HumanBase
 	private bool isFallSpeedLimited;
 
 	private bool overridenDrag;
-
+    
+	// Physics:
+	// I = m * v
+	// Momentum = mass * velocity
 	public Vector3 momentum
 	{
 		get
@@ -107,8 +110,8 @@ public class Human : HumanBase
 			Vector3 zero = Vector3.zero;
 			for (int i = 0; i < rigidbodies.Length; i++)
 			{
-				Rigidbody rigidbody = rigidbodies[i];
-				zero += rigidbody.velocity * rigidbody.mass;
+				Rigidbody rigidbody = rigidbodies[i]; // rigidbodies of a Human
+				zero += rigidbody.velocity * rigidbody.mass; // the sum of all momentum
 			}
 			return zero;
 		}
@@ -173,6 +176,7 @@ public class Human : HumanBase
 	{
 		if (thisFrameHit + lastFrameHit > 30f)
 		{
+			// Human becomes unconscious after receive amount of hit
 			MakeUnconscious();
 			ReleaseGrab(3f);
 		}
